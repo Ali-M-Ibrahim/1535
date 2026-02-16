@@ -4,6 +4,9 @@ use App\Http\Controllers\ApiResourceController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,3 +52,6 @@ Route::resource('newitem',ResourceController::class);
 Route::apiResource('apislug',ApiResourceController::class);
 
 Route::get("invoke",\App\Http\Controllers\InvokeController::class);
+
+
+Route::get("relations",[DataController::class,'index']);
