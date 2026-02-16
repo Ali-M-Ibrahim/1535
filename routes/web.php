@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ApiResourceController;
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,3 +41,11 @@ Route::delete("/post",[FirstController::class,'post']);
 Route::get("/DONTUSE",function (){
  return "hello";
 });
+
+Route::resource('newitem',ResourceController::class);
+//->only(['index','create']);
+//->except('destroy');
+
+Route::apiResource('apislug',ApiResourceController::class);
+
+Route::get("invoke",\App\Http\Controllers\InvokeController::class);
