@@ -5,6 +5,7 @@ use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ItemController;
 
 
 
@@ -55,3 +56,47 @@ Route::get("invoke",\App\Http\Controllers\InvokeController::class);
 
 
 Route::get("relations",[DataController::class,'index']);
+
+Route::get('create-item-1',[ItemController::class,'create1']);
+Route::get('create-item-2',[ItemController::class,'create2']);
+Route::post('create-item-3',[ItemController::class,'create12']);
+Route::post('create-item-4',[ItemController::class,'create3']);
+Route::get('create-item-5',[ItemController::class,'create4']);
+
+Route::get("getItemById/{id}",[ItemController::class,'getItemById']);
+Route::get("getItems",[ItemController::class,'getItems']);
+Route::get("getItemsHavingPrice100",[ItemController::class,'getItemsHavingPrice100']);
+Route::get("getItems",[ItemController::class,'getItems']);
+Route::get("getItemByOperator",[ItemController::class,'getItemByOperator']);
+Route::get("getItemsMultipleConditions",[ItemController::class,'getItemsMultipleConditions']);
+Route::get("getItemsWithOr",[ItemController::class,'getItemsWithOr']);
+
+Route::get("getItemsIn",[ItemController::class,'getItemsIn']);
+Route::get("getItemsBetween",[ItemController::class,'getItemsBetween']);
+Route::get("getItemsOrderByPrice",[ItemController::class,'getItemsOrderByPrice']);
+Route::get("statistics",[ItemController::class,'statistics']);
+Route::get("GroupByPrice",[ItemController::class,'GroupByPrice']);
+Route::get("getElements",[ItemController::class,'getElements']);
+Route::get("getDataJoin",[ItemController::class,'getDataJoin']);
+Route::get("update1",[ItemController::class,'update1']);
+Route::put("update2",[ItemController::class,'update2']);
+
+Route::get("massUpdate",[ItemController::class,'massUpdate']);
+
+Route::get("createOrUpdate1",[ItemController::class,'createOrUpdate1']);
+
+Route::get("delete",[ItemController::class,'delete']);
+
+Route::get("massDelete",[ItemController::class,'massDelete']);
+
+
+
+
+
+
+
+
+
+
+
+
