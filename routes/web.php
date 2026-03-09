@@ -6,7 +6,7 @@ use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\ItemController;
-
+use App\Http\Controllers\ViewController;
 
 
 Route::get('/', function () {
@@ -90,6 +90,9 @@ Route::get("delete",[ItemController::class,'delete']);
 Route::get("massDelete",[ItemController::class,'massDelete']);
 
 
+Route::get("first-view",[ViewController::class,'index']);
+Route::get("list-view",[ViewController::class,'listItems'])->name('my-list');
+Route::get("view-item/{id}",[ViewController::class,'viewItem'])->name("my-view");
 
 
 
